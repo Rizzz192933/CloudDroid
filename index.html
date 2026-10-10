@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0b1020">
+    <title>CloudDroid</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo">CD</div>
+            <div>
+                <h1>CloudDroid</h1>
+                <p>Cloud Phone Dashboard</p>
+            </div>
+        </div>
+
+        <button class="icon-btn" id="themeButton"
+                aria-label="Ganti tema">☼</button>
+    </header>
+
+    <main>
+        <!-- HOME -->
+        <section class="page active" id="homePage">
+            <div class="welcome">
+                <p class="eyebrow">ANDROID CLOUD PROJECT</p>
+                <h2>HP virtualmu,<br>di satu tempat.</h2>
+                <p class="muted">
+                    Kelola proyek CloudDroid dari browser HP kamu.
+                </p>
+            </div>
+
+            <div class="status-card">
+                <div class="status-heading">
+                    <div>
+                        <p class="muted small">STATUS PERANGKAT</p>
+                        <h3 id="deviceStatus">Belum terhubung</h3>
+                    </div>
+                    <span class="status-dot"></span>
+                </div>
+
+                <div class="phone-preview">
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="phone-time" id="phoneTime">
+                                09:41
+                            </div>
+                            <div class="phone-date" id="phoneDate">
+                                CloudDroid
+                            </div>
+
+                            <div class="app-grid">
+                                <div class="app-icon play">▶</div>
+                                <div class="app-icon settings">⚙</div>
+                                <div class="app-icon browser">🌐</div>
+                                <div class="app-icon files">📁</div>
+                            </div>
+
+                            <p class="phone-caption">
+                                Preview tampilan saja
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="notice">
+                    Ini hanya pratinjau. Android virtual belum berjalan.
+                </p>
+
+                <button class="primary-btn" id="connectButton">
+                    Hubungkan Cloud Phone
+                </button>
+
+                <p class="small muted center" id="connectMessage">
+                    Belum ada server Android yang dikonfigurasi.
+                </p>
+            </div>
+
+            <div class="section-title">
+                <h3>Mulai proyek</h3>
+                <span class="muted small">Langkah awal</span>
+            </div>
+
+            <div class="action-grid">
+                <button class="action-card" data-page="setupPage">
+                    <span class="action-icon">⌘</span>
+                    <strong>Setup Server</strong>
+                    <span>Pelajari cara menyiapkan Android</span>
+                </button>
+
+                <button class="action-card" id="githubButton">
+                    <span class="action-icon">⌂</span>
+                    <strong>GitHub</strong>
+                    <span>Buat repository proyek</span>
+                </button>
+            </div>
+
+            <div class="section-title">
+                <h3>Target fitur</h3>
+            </div>
+
+            <div class="feature-list">
+                <div class="feature">
+                    <span>✓</span>
+                    <div>
+                        <strong>Dashboard web</strong>
+                        <p>Berjalan di browser HP</p>
+                    </div>
+                    <span class="tag ready">Tersedia</span>
+                </div>
+
+                <div class="feature">
+                    <span>○</span>
+                    <div>
+                        <strong>Android virtual</strong>
+                        <p>Memerlukan server yang kompatibel</p>
+                    </div>
+                    <span class="tag pending">Belum</span>
+                </div>
+
+                <div class="feature">
+                    <span>○</span>
+                    <div>
+                        <strong>Google Play Store</strong>
+                        <p>Memerlukan image dengan dukungan Google</p>
+                    </div>
+                    <span class="tag pending">Belum</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- BROWSER -->
+        <section class="page" id="browserPage">
+            <div class="page-heading">
+                <p class="eyebrow">TOOLS</p>
+                <h2>Browser</h2>
+                <p class="muted">
+                    Buka halaman web melalui browser HP kamu.
+                </p>
+            </div>
+
+            <form id="browserForm" class="browser-form">
+                <input id="urlInput" type="url"
+                       placeholder="https://example.com"
+                       autocomplete="url" required>
+                <button class="primary-btn" type="submit">
+                    Buka
+                </button>
+            </form>
+
+            <div class="info-card">
+                <span class="action-icon">🌐</span>
+                <h3>Browser eksternal</h3>
+                <p>
+                    Halaman akan dibuka di browser perangkatmu.
+                    Ini bukan browser internal Android virtual.
+                </p>
+            </div>
+
+            <div class="section-title">
+                <h3>Akses cepat</h3>
+            </div>
+
+            <div class="quick-links">
+                <button data-url="https://github.com">
+                    GitHub ↗
+                </button>
+                <button data-url="https://google.com">
+                    Google ↗
+                </button>
+                <button data-url="https://play.google.com/store">
+                    Play Store ↗
+                </button>
+            </div>
+        </section>
+
+        <!-- SETUP -->
+        <section class="page" id="setupPage">
+            <div class="page-heading">
+                <p class="eyebrow">PANDUAN</p>
+                <h2>Setup CloudDroid</h2>
+                <p class="muted">
+                    Bangun proyek secara bertahap tanpa biaya.
+                </p>
+            </div>
+
+            <div class="setup-card">
+                <div class="step-number">01</div>
+                <h3>Buat repository</h3>
+                <p>
+                    Simpan file proyek di GitHub agar kode
+                    dapat dikelola secara online.
+                </p>
+                <button class="secondary-btn" id="createRepoButton">
+                    Buat Repository
+                </button>
+            </div>
+
+            <div class="setup-card">
+                <div class="step-number">02</div>
+                <h3>Terbitkan dashboard</h3>
+                <p>
+                    Gunakan GitHub Pages untuk meng-host
+                    halaman web statis secara gratis.
+                </p>
+                <a class="secondary-btn link-btn"
+                   href="https://docs.github.com/en/pages"
+                   target="_blank" rel="noopener noreferrer">
+                    Panduan GitHub Pages ↗
+                </a>
+            </div>
+
+            <div class="setup-card">
+                <div class="step-number">03</div>
+                <h3>Siapkan mesin Android</h3>
+                <p>
+                    Kita masih memerlukan server Linux yang
+                    mampu menjalankan Android virtual.
+                    HP saja dan GitHub Pages tidak cukup.
+                </p>
+                <a class="secondary-btn link-btn"
+                   href="https://github.com/remote-android/redroid-doc"
+                   target="_blank" rel="noopener noreferrer">
+                    Pelajari redroid ↗
+                </a>
+            </div>
+
+            <div class="setup-card">
+                <div class="step-number">04</div>
+                <h3>Hubungkan layar Android</h3>
+                <p>
+                    Setelah server Android benar-benar aktif,
+                    kita dapat menambahkan koneksi layar
+                    dan kontrol jarak jauh melalui browser.
+                </p>
+                <span class="tag pending">Menunggu server</span>
+            </div>
+
+            <div class="warning-card">
+                <strong>Perhatian</strong>
+                <p>
+                    Jangan masukkan password Google ke halaman
+                    yang belum kamu percayai. Jangan menganggap
+                    tombol koneksi sebagai bukti bahwa server
+                    Android sudah berjalan.
+                </p>
+            </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section class="page" id="settingsPage">
+            <div class="page-heading">
+                <p class="eyebrow">PREFERENSI</p>
+                <h2>Pengaturan</h2>
+            </div>
+
+            <div class="settings-group">
+                <div class="setting-row">
+                    <div>
+                        <strong>Tema gelap</strong>
+                        <p class="muted">Tampilan CloudDroid</p>
+                    </div>
+                    <button class="toggle-btn" id="settingsThemeButton">
+                        Aktif
+                    </button>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <strong>Status proyek</strong>
+                        <p class="muted">Dashboard lokal di Acode</p>
+                    </div>
+                    <span class="tag ready">Aktif</span>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <strong>Server Android</strong>
+                        <p class="muted">Belum dikonfigurasi</p>
+                    </div>
+                    <span class="tag pending">Offline</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Tentang CloudDroid</h3>
+                <p>
+                    Proyek pribadi untuk membangun akses
+                    Cloud Phone Android melalui browser.
+                </p>
+                <p class="muted small">Versi dashboard 1.0</p>
+            </div>
+
+            <button class="danger-btn" id="resetButton">
+                Reset tampilan
+            </button>
+        </section>
+    </main>
+
+    <!-- NAVIGASI BAWAH -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-page="homePage">
+            <span>⌂</span>
+            <small>Home</small>
+        </button>
+
+        <button class="nav-item" data-page="browserPage">
+            <span>◎</span>
+            <small>Browser</small>
+        </button>
+
+        <button class="nav-item" data-page="setupPage">
+            <span>▦</span>
+            <small>Setup</small>
+        </button>
+
+        <button class="nav-item" data-page="settingsPage">
+            <span>⚙</span>
+            <small>Setelan</small>
+        </button>
+    </nav>
+
+    <div id="toast" class="toast" role="status"></div>
+
+    <script src="script.js"></script>
+</body>
+                          </html>
